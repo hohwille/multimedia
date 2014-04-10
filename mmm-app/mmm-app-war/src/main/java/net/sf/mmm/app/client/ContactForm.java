@@ -11,16 +11,14 @@ import net.sf.mmm.client.ui.api.common.LengthUnit;
 import net.sf.mmm.client.ui.api.widget.UiWidgetWithValue;
 import net.sf.mmm.client.ui.api.widget.core.UiWidgetCollapsableSection;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetColorField;
-import net.sf.mmm.client.ui.api.widget.field.UiWidgetDateField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetRadioButtonsField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetRichTextField;
-import net.sf.mmm.client.ui.api.widget.field.UiWidgetTimeField;
 import net.sf.mmm.client.ui.base.binding.UiDataBinding;
 import net.sf.mmm.client.ui.base.widget.custom.panel.UiWidgetCustomGridPanel;
 import net.sf.mmm.util.datatype.api.color.Color;
 
 /**
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -28,7 +26,7 @@ public class ContactForm extends UiWidgetCustomGridPanel<ContactBean> {
 
   /**
    * The constructor.
-   * 
+   *
    * @param context is the {@link #getContext() context}.
    */
   public ContactForm(UiContext context) {
@@ -44,9 +42,10 @@ public class ContactForm extends UiWidgetCustomGridPanel<ContactBean> {
     // section = getFactory().createSection("Optionals");
     getDelegate().addChildSpanned(section);
 
-    UiWidgetDateField widgetBirthday = getFactory().create(UiWidgetDateField.class);// dataBinding.createAndBind(Contact.PROPERTY_BIRTHDAY);
-    widgetBirthday.setLabel("Birthday");
-    getDelegate().addChildren(widgetBirthday);
+    // UiWidgetDateField widgetBirthday = getFactory().create(UiWidgetDateField.class);//
+    // dataBinding.createAndBind(Contact.PROPERTY_BIRTHDAY);
+    // widgetBirthday.setLabel("Birthday");
+    // getDelegate().addChildren(widgetBirthday);
 
     UiWidgetWithValue<Integer> widgetShoeSize = dataBinding.createAndBind(Contact.PROPERTY_SHOE_SIZE);
     getDelegate().addChildren(widgetShoeSize);
@@ -78,11 +77,11 @@ public class ContactForm extends UiWidgetCustomGridPanel<ContactBean> {
     colors.setOptions(colorOptions);
     getDelegate().addChildren(colors);
 
-    UiWidgetTimeField time = context.getWidgetFactory().create(UiWidgetTimeField.class);
-    time.setLabel("Departuretime");
-    getDelegate().addChildren(time);
+    // UiWidgetTimeField time = context.getWidgetFactory().create(UiWidgetTimeField.class);
+    // time.setLabel("Departuretime");
+    // getDelegate().addChildren(time);
 
-    section.addCollapseWidget(widgetBirthday);
+    // section.addCollapseWidget(widgetBirthday);
     section.addCollapseWidget(richTextField);
     section.addCollapseWidget(radios);
   }

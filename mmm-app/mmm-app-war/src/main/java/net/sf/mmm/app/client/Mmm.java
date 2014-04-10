@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Consumer;
 
 import net.sf.mmm.app.client.dialog.DialogControllerFactoryImpl;
 import net.sf.mmm.app.shared.GreetingService;
@@ -56,6 +55,7 @@ import net.sf.mmm.client.ui.impl.gwt.UiContextGwt;
 import net.sf.mmm.service.api.rpc.client.RemoteInvocationServiceCaller;
 import net.sf.mmm.service.api.rpc.client.RemoteInvocationServiceQueue;
 import net.sf.mmm.util.filter.api.CharFilter;
+import net.sf.mmm.util.lang.api.function.Consumer;
 import net.sf.mmm.util.nls.api.NlsNullPointerException;
 import net.sf.mmm.util.nls.base.NlsMessageLookupProxy;
 import net.sf.mmm.util.pojo.descriptor.base.PojoDescriptorBuilderFactoryLimited;

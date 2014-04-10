@@ -20,5 +20,5 @@
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.google.gwt.dev.DevMode"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-war &quot;${workspace_loc:mmm-app-war}\target\mmm-app-war-1.0.0-SNAPSHOT&quot; -remoteUI &quot;${gwt_remote_ui_server_port}:${unique_id}&quot; -startupUrl Mmm.html -logLevel DEBUG -codeServerPort 9997 -port 8888 -gen &quot;${project_loc:mmm-app-war}/eclipse-target/gwt-gen&quot; net.sf.mmm.app.Mmm"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="mmm-app-war"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-XX:MaxPermSize=256m -Xmx512m &quot;-Xbootclasspath/p:${env_var:M2_REPO}/net/sf/m-m-m/mmm-util-backport-java.util.function/1.0.0/mmm-util-backport-java.util.function-1.0.0.jar;${env_var:M2_REPO}/net/sf/m-m-m/mmm-util-backport-java.time/1.0.0/mmm-util-backport-java.time-1.0.0.jar&quot; -Dgwt.persistentunitcachedir=../../../.gwt"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-XX:MaxPermSize=256m -Xmx512m &quot;-Xbootclasspath/p:${env_var:M2_REPO}/net/sf/m-m-m/mmm-util-backport-java.time/1.0.0/mmm-util-backport-java.time-1.0.0.jar&quot; -Dgwt.persistentunitcachedir=../../../.gwt"/>
 </launchConfiguration>

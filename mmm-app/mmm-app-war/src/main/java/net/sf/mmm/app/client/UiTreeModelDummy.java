@@ -4,13 +4,13 @@ package net.sf.mmm.app.client;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 import net.sf.mmm.client.ui.api.widget.complex.UiWidgetAbstractTree.UiTreeModel;
+import net.sf.mmm.util.lang.api.function.Consumer;
 
 /**
  * TODO: this class ...
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -18,7 +18,7 @@ public class UiTreeModelDummy implements UiTreeModel<String> {
 
   /**
    * The constructor.
-   * 
+   *
    */
   public UiTreeModelDummy() {
 
