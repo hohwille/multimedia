@@ -8,19 +8,19 @@ import javax.persistence.Transient;
 
 import net.sf.mmm.data.api.DataObject;
 import net.sf.mmm.data.api.reflection.DataClassAnnotation;
-import net.sf.mmm.persistence.base.jpa.JpaEntity;
+import net.sf.mmm.persistence.base.jpa.AbstractJpaEntity;
 import net.sf.mmm.util.pojo.descriptor.api.PojoPropertyNotFoundException;
 
 /**
  * This is the implementation of the abstract entity {@link DataObject}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
 @MappedSuperclass
 @DataClassAnnotation(id = DataObject.CLASS_ID, title = DataObject.CLASS_TITLE, //
 groupId = DataClassGroupRoot.GROUP_ID, groupVersion = DataClassGroupRoot.GROUP_VERSION)
-public abstract class AbstractDataObject extends JpaEntity implements DataObject {
+public abstract class AbstractDataObject extends AbstractJpaEntity<Long> implements DataObject {
 
   /** UID for serialization. */
   private static final long serialVersionUID = 8616371370522165168L;
@@ -41,7 +41,7 @@ public abstract class AbstractDataObject extends JpaEntity implements DataObject
 
   /**
    * The constructor.
-   * 
+   *
    * @param title is the {@link #getTitle() title}.
    */
   public AbstractDataObject(String title) {
@@ -56,9 +56,9 @@ public abstract class AbstractDataObject extends JpaEntity implements DataObject
    * This method allows to implement custom logic to provide read access to
    * {@link net.sf.mmm.data.api.reflection.DataField fields} of dynamically typed
    * {@link net.sf.mmm.data.api.reflection.DataClass classes}.
-   * 
+   *
    * @see net.sf.mmm.data.api.reflection.access.DataFieldAccessor#getFieldValue(DataObject)
-   * 
+   *
    * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getTitle() title} of the requested
    *        {@link net.sf.mmm.data.api.reflection.DataField}.
    * @return the value of the requested field.
@@ -72,9 +72,9 @@ public abstract class AbstractDataObject extends JpaEntity implements DataObject
    * This method allows to implement custom logic to provide write access to
    * {@link net.sf.mmm.data.api.reflection.DataField fields} of dynamically typed
    * {@link net.sf.mmm.data.api.reflection.DataClass classes}.
-   * 
+   *
    * @see net.sf.mmm.data.api.reflection.access.DataFieldAccessor#setFieldValue(DataObject, Object)
-   * 
+   *
    * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getTitle() title} of the requested
    *        {@link net.sf.mmm.data.api.reflection.DataField}.
    * @param value is the value of the field to set.
@@ -123,7 +123,7 @@ public abstract class AbstractDataObject extends JpaEntity implements DataObject
 
   /**
    * This method gets the parent of this object.
-   * 
+   *
    * @return the parent or <code>null</code> if it has no parent.
    */
   @Transient
@@ -134,7 +134,7 @@ public abstract class AbstractDataObject extends JpaEntity implements DataObject
 
   /**
    * {@inheritDoc}
-   * 
+   *
    * <b>ATTENTION:</b><br>
    * This field/method is logically
    * {@link net.sf.mmm.data.api.reflection.DataFieldAnnotation#isInheritedFromParent() inherited} but NOT

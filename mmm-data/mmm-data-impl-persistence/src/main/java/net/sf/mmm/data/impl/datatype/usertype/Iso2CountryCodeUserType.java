@@ -5,6 +5,7 @@ package net.sf.mmm.data.impl.datatype.usertype;
 import javax.persistence.MappedSuperclass;
 
 import net.sf.mmm.persistence.impl.hibernate.usertype.StringDatatypeUserType;
+import net.sf.mmm.util.datatype.api.address.Iso2CountryCode;
 import net.sf.mmm.util.datatype.api.address.PostalCode;
 
 import org.hibernate.annotations.TypeDef;
@@ -17,24 +18,24 @@ import org.hibernate.annotations.TypeDef;
  * @since 1.0.0
  */
 @MappedSuperclass
-@TypeDef(defaultForType = PostalCode.class, typeClass = PostalCodeUserType.class)
-public class PostalCodeUserType extends StringDatatypeUserType<PostalCode> {
+@TypeDef(defaultForType = Iso2CountryCode.class, typeClass = Iso2CountryCodeUserType.class)
+public class Iso2CountryCodeUserType extends StringDatatypeUserType<Iso2CountryCode> {
 
   /**
    * The constructor.
    */
-  public PostalCodeUserType() {
+  public Iso2CountryCodeUserType() {
 
-    super(PostalCode.class);
+    super(Iso2CountryCode.class);
   }
 
   /**
    * {@inheritDoc}
    */
   @Override
-  protected PostalCode toDatatype(String value) {
+  protected Iso2CountryCode toDatatype(String value) {
 
-    return new PostalCode(value);
+    return new Iso2CountryCode(value);
   }
 
 }

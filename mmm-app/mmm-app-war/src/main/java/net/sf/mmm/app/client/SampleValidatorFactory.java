@@ -2,6 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.app.client;
 
+import javax.validation.ParameterNameProvider;
 import javax.validation.Validator;
 import javax.validation.groups.Default;
 
@@ -12,7 +13,7 @@ import com.google.gwt.validation.client.impl.AbstractGwtValidator;
 
 /**
  * TODO: this class ...
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -26,9 +27,31 @@ public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
   public interface GwtValidator extends Validator {
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AbstractGwtValidator createValidator() {
 
     return GWT.create(GwtValidator.class);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public ParameterNameProvider getParameterNameProvider() {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void close() {
+
+    // nothing to do...
   }
 }
