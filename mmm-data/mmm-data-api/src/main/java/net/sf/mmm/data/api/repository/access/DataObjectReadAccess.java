@@ -6,7 +6,7 @@ import net.sf.mmm.data.api.DataException;
 import net.sf.mmm.data.api.DataObject;
 import net.sf.mmm.data.api.datatype.DataId;
 import net.sf.mmm.data.api.entity.resource.DataEntityResource;
-import net.sf.mmm.util.nls.api.ObjectNotFoundException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundException;
 
 /**
  * This is the abstract interface for any container of content resources.

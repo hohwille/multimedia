@@ -14,7 +14,7 @@ import net.sf.mmm.data.api.entity.DataEntity;
 import net.sf.mmm.data.base.link.AbstractLink;
 import net.sf.mmm.data.impl.entity.AbstractDataEntity;
 import net.sf.mmm.util.entity.api.MutableGenericEntity;
-import net.sf.mmm.util.nls.api.NlsNullPointerException;
+import net.sf.mmm.util.exception.api.NlsNullPointerException;
 
 /**
  * This is the implementation of {@link net.sf.mmm.data.api.link.Link}.

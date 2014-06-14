@@ -59,7 +59,7 @@ public abstract class AbstractDataObject extends AbstractJpaEntity<Long> impleme
    *
    * @see net.sf.mmm.data.api.reflection.access.DataFieldAccessor#getFieldValue(DataObject)
    *
-   * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getTitle() title} of the requested
+   * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getOperator() title} of the requested
    *        {@link net.sf.mmm.data.api.reflection.DataField}.
    * @return the value of the requested field.
    */
@@ -75,7 +75,7 @@ public abstract class AbstractDataObject extends AbstractJpaEntity<Long> impleme
    *
    * @see net.sf.mmm.data.api.reflection.access.DataFieldAccessor#setFieldValue(DataObject, Object)
    *
-   * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getTitle() title} of the requested
+   * @param field is the {@link net.sf.mmm.data.api.reflection.DataField#getOperator() title} of the requested
    *        {@link net.sf.mmm.data.api.reflection.DataField}.
    * @param value is the value of the field to set.
    */

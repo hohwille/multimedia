@@ -24,7 +24,7 @@ import net.sf.mmm.data.base.AbstractDataObject;
 import net.sf.mmm.data.impl.link.LinkImpl;
 import net.sf.mmm.data.impl.link.LinkListHelper;
 import net.sf.mmm.data.impl.link.MutableLinkListImpl;
-import net.sf.mmm.util.nls.api.NlsIllegalArgumentException;
+import net.sf.mmm.util.exception.api.NlsIllegalArgumentException;
 
 /**
  * This is the abstract base implementation of {@link DataEntity}. It supports a hybrid data model with

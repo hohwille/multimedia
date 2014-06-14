@@ -29,15 +29,6 @@ public class UiTreeModelDummy implements UiTreeModel<String> {
    * {@inheritDoc}
    */
   @Override
-  public String getRootNode() {
-
-    return "Root";
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  @Override
   public List<String> getChildren(String node) {
 
     List<String> children = new ArrayList<String>();

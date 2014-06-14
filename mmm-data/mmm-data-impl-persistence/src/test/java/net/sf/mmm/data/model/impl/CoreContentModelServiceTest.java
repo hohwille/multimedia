@@ -17,7 +17,7 @@ import org.junit.Test;
 
 /**
  * This is the test-case for {@link CoreDataReflectionService}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */

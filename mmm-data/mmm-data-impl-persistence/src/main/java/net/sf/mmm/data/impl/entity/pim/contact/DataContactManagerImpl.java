@@ -9,7 +9,7 @@ import net.sf.mmm.persistence.base.jpa.AbstractJpaGenericDao;
 
 /**
  * TODO: this class ...
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -28,7 +28,7 @@ public class DataContactManagerImpl extends AbstractJpaGenericDao<Long, DataCont
    * {@inheritDoc}
    */
   @Override
-  public Class<? extends DataContact> getEntityClassImplementation() {
+  public Class<? extends DataContact> getEntityClass() {
 
     return DataContactImpl.class;
   }
@@ -37,16 +37,7 @@ public class DataContactManagerImpl extends AbstractJpaGenericDao<Long, DataCont
    * {@inheritDoc}
    */
   @Override
-  public Class<? super DataContact> getEntityClassReadOnly() {
-
-    return DataContact.class;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public Class<DataContact> getEntityClassReadWrite() {
+  public Class<DataContact> getEntityApiClass() {
 
     return DataContact.class;
   }

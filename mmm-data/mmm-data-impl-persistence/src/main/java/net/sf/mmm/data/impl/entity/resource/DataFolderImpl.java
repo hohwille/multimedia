@@ -13,11 +13,11 @@ import javax.persistence.Transient;
 import net.sf.mmm.data.api.entity.resource.DataEntityResource;
 import net.sf.mmm.data.api.entity.resource.DataFolder;
 import net.sf.mmm.data.api.reflection.DataClassAnnotation;
-import net.sf.mmm.util.nls.api.NlsNullPointerException;
+import net.sf.mmm.util.exception.api.NlsNullPointerException;
 
 /**
  * This is the implementation of {@link DataFolder}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */

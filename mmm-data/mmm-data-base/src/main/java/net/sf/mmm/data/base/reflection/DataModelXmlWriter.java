@@ -16,7 +16,7 @@ import net.sf.mmm.util.lang.api.StringUtil;
 
 /**
  * This class allows to serialize the content-model to XML using StAX.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -33,7 +33,7 @@ public class DataModelXmlWriter {
   /**
    * This method writes the general XML attributes of the given <code>contentObject</code> to the
    * <code>xmlWriter</code>.
-   * 
+   *
    * @param contentClassOrField is the object to write.
    * @param xmlWriter is where to write the XML to. The writer will NOT be {@link XMLStreamWriter#close()
    *        closed}.
@@ -54,7 +54,7 @@ public class DataModelXmlWriter {
 
   /**
    * This method writes the XML of the given <code>contentField</code> to the <code>xmlWriter</code>.
-   * 
+   *
    * @param contentField is the field to write.
    * @param xmlWriter is where to write the XML to. The writer will NOT be {@link XMLStreamWriter#close()
    *        closed}.
@@ -90,7 +90,7 @@ public class DataModelXmlWriter {
    * This method writes the XML of the given <code>contentClass</code> including all its
    * {@link DataClass#getDeclaredFields() fields} and its {@link DataClass#getSubClasses() sub-classes}
    * (recursive) to the <code>xmlWriter</code>.
-   * 
+   *
    * @param contentClass is the class to write.
    * @param xmlWriter is where to write the XML to. The writer will NOT be {@link XMLStreamWriter#close()
    *        closed}.
@@ -126,7 +126,7 @@ public class DataModelXmlWriter {
   /**
    * This method writes the XML of the content-model with the given <code>rootClass</code> to the
    * <code>xmlWriter</code>.
-   * 
+   *
    * @param rootClass is the root-class of the content-model.
    * @param xmlWriter is where to write the XML to. The writer will NOT be {@link XMLStreamWriter#close()
    *        closed}.

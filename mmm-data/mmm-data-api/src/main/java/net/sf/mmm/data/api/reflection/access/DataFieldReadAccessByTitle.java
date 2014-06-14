@@ -4,7 +4,7 @@ package net.sf.mmm.data.api.reflection.access;
 
 import net.sf.mmm.data.api.DataObject;
 import net.sf.mmm.data.api.reflection.DataField;
-import net.sf.mmm.util.nls.api.ObjectNotFoundException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundException;
 
 /**
  * This interface allows to {@link #getDataField(String) get} a {@link DataField} by its

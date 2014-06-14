@@ -6,10 +6,13 @@ import javax.inject.Named;
 
 import net.sf.mmm.app.shared.GreetingService;
 import net.sf.mmm.service.base.rpc.server.AbstractRemoteInvocationService;
+import net.sf.mmm.util.NlsBundleUtilCoreRoot;
+import net.sf.mmm.util.nls.api.NlsAccess;
+import net.sf.mmm.util.nls.api.NlsMessage;
 
 /**
  * TODO: this class ...
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -31,6 +34,16 @@ public class GreetingServiceImpl extends AbstractRemoteInvocationService impleme
   public String greeting(String name) {
 
     return "Hello " + name;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public NlsMessage testSerialization(NlsMessage message) {
+
+    System.out.println(message.getLocalizedMessage());
+    return NlsAccess.getBundleFactory().createBundle(NlsBundleUtilCoreRoot.class).errorAccessFailed("test");
   }
 
 }

@@ -3,6 +3,7 @@
 package net.sf.mmm.app.client;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
@@ -19,11 +20,8 @@ import net.sf.mmm.client.ui.api.common.UiMode;
 import net.sf.mmm.client.ui.api.dialog.DialogConstants;
 import net.sf.mmm.client.ui.api.event.UiEvent;
 import net.sf.mmm.client.ui.api.event.UiEventClick;
-import net.sf.mmm.client.ui.api.event.UiEventClose;
-import net.sf.mmm.client.ui.api.event.UiEventOpen;
 import net.sf.mmm.client.ui.api.event.UiEventValueChange;
 import net.sf.mmm.client.ui.api.handler.event.UiHandlerEventClick;
-import net.sf.mmm.client.ui.api.handler.event.UiHandlerEventOpenClose;
 import net.sf.mmm.client.ui.api.handler.event.UiHandlerEventValueChange;
 import net.sf.mmm.client.ui.api.handler.object.UiHandlerObjectSave;
 import net.sf.mmm.client.ui.api.widget.UiWidgetFactory;
@@ -37,8 +35,8 @@ import net.sf.mmm.client.ui.api.widget.core.UiWidgetImage;
 import net.sf.mmm.client.ui.api.widget.core.UiWidgetLabel;
 import net.sf.mmm.client.ui.api.widget.core.UiWidgetToggleButton;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetCheckboxField;
-import net.sf.mmm.client.ui.api.widget.field.UiWidgetDateField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetIntegerSliderField;
+import net.sf.mmm.client.ui.api.widget.field.UiWidgetLocalDateField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetRichTextField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetTextField;
 import net.sf.mmm.client.ui.api.widget.menu.UiWidgetMenu;
@@ -54,9 +52,10 @@ import net.sf.mmm.client.ui.base.dialog.DialogControllerFactory;
 import net.sf.mmm.client.ui.impl.gwt.UiContextGwt;
 import net.sf.mmm.service.api.rpc.client.RemoteInvocationServiceCaller;
 import net.sf.mmm.service.api.rpc.client.RemoteInvocationServiceQueue;
+import net.sf.mmm.util.exception.api.NlsNullPointerException;
 import net.sf.mmm.util.filter.api.CharFilter;
 import net.sf.mmm.util.lang.api.function.Consumer;
-import net.sf.mmm.util.nls.api.NlsNullPointerException;
+import net.sf.mmm.util.nls.api.NlsMessage;
 import net.sf.mmm.util.nls.base.NlsMessageLookupProxy;
 import net.sf.mmm.util.pojo.descriptor.base.PojoDescriptorBuilderFactoryLimited;
 
@@ -213,7 +212,7 @@ public class Mmm implements EntryPoint {// extends AbstractEntryPoint<ClientGinj
     size.setMinimumWidth(Length.valueOfPixel(50));
     size.setWidth(Length.valueOfPixel(400));
     columnIncome.getSize().setWidthInPixel(100);
-    contactTable.setColumns(columnFirstName, columnLastName, columnIncome);
+    contactTable.setColumns(Arrays.asList(columnFirstName, columnLastName, columnIncome));
     contactTable.setSelectionMode(SelectionMode.MULTIPLE_SELECTION);
 
     final List<ContactBean> contactBeanList = new ArrayList<ContactBean>();
@@ -288,20 +287,6 @@ public class Mmm implements EntryPoint {// extends AbstractEntryPoint<ClientGinj
             popup.setResizable(checkboxResizsable.getValue().booleanValue());
           }
         };
-        popup.addOpenCloseHandler(new UiHandlerEventOpenClose() {
-
-          @Override
-          public void onOpen(UiEventOpen event) {
-
-            Log.debug("open");
-          }
-
-          @Override
-          public void onClose(UiEventClose event) {
-
-            Log.debug("close");
-          }
-        });
         checkboxResizsable.addChangeHandler(changeHandler);
         final UiWidgetCheckboxField checkboxMovable = factory.create(UiWidgetCheckboxField.class);
         checkboxMovable.setTitle("movable");
@@ -380,13 +365,13 @@ public class Mmm implements EntryPoint {// extends AbstractEntryPoint<ClientGinj
     UiTreeModelDummy model = new UiTreeModelDummy();
     tree.setTreeModel(model);
     // setRichTextRenderer(tree);
-    tree.setValue(model.getRootNode());
+    tree.setValue("Root");
     verticalPanel2.addChild(tree);
 
     mainWindow.addChild(verticalPanel1);
     mainWindow.addChild(verticalPanel2);
 
-    UiWidgetDateField dateField = factory.create(UiWidgetDateField.class);
+    UiWidgetLocalDateField dateField = factory.create(UiWidgetLocalDateField.class);
     verticalPanel2.addChild(dateField);
     UiWidgetTextField textBoxField = factory.create(UiWidgetTextField.class);
     verticalPanel2.addChild(textBoxField);
@@ -516,14 +501,14 @@ public class Mmm implements EntryPoint {// extends AbstractEntryPoint<ClientGinj
         button.setEnabled(false);
         textToServerLabel.setText(textToServer);
         serverResponseLabel.setText("");
-        Consumer<String> successCallback = new Consumer<String>() {
+        Consumer<NlsMessage> successCallback = new Consumer<NlsMessage>() {
 
           @Override
-          public void accept(String result) {
+          public void accept(NlsMessage result) {
 
             dialogBox.setText("Remote Procedure Call");
             serverResponseLabel.removeStyleName("serverResponseLabelError");
-            serverResponseLabel.setHTML(result);
+            serverResponseLabel.setHTML(result.getLocalizedMessage());
             dialogBox.center();
             closeButton.setFocus(true);
           }
@@ -545,8 +530,8 @@ public class Mmm implements EntryPoint {// extends AbstractEntryPoint<ClientGinj
         serviceCaller = GWT.create(RemoteInvocationServiceCaller.class);
         // serviceCaller = getGinjector().getServiceCaller();
         RemoteInvocationServiceQueue queue = serviceCaller.newQueue();
-        queue.getServiceClient(GreetingService.class, String.class, successCallback, failureCallback).greeting(
-            textToServer);
+        queue.getServiceClient(GreetingService.class, NlsMessage.class, successCallback, failureCallback)
+            .testSerialization(new NlsNullPointerException("test").getNlsMessage());
         queue.commit();
       }
     }

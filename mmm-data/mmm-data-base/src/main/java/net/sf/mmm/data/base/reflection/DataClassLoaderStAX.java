@@ -15,7 +15,7 @@ import net.sf.mmm.data.api.reflection.DataField;
 import net.sf.mmm.data.api.reflection.DataFieldModifiers;
 import net.sf.mmm.data.api.reflection.DataModifiers;
 import net.sf.mmm.data.api.reflection.DataReflectionService;
-import net.sf.mmm.util.nls.api.ObjectMismatchException;
+import net.sf.mmm.util.exception.api.ObjectMismatchException;
 import net.sf.mmm.util.reflect.api.ClassResolver;
 import net.sf.mmm.util.reflect.api.GenericType;
 import net.sf.mmm.util.value.api.ValueException;
@@ -78,7 +78,7 @@ public class DataClassLoaderStAX extends DataClassLoaderNative {
   }
 
   /**
-   * This method reads the {@link DataObject#getTitle() name} from the given <code>xmlReader</code>.
+   * This method reads the {@link DataObject#getOperator() name} from the given <code>xmlReader</code>.
    * 
    * @param xmlReader is where to read the XML from.
    * @return the name of the class or field.

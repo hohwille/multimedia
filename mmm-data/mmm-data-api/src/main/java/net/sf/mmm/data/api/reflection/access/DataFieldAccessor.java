@@ -4,8 +4,8 @@ package net.sf.mmm.data.api.reflection.access;
 
 import net.sf.mmm.data.api.DataObject;
 import net.sf.mmm.security.api.SecurityException;
-import net.sf.mmm.util.nls.api.NlsClassCastException;
-import net.sf.mmm.util.nls.api.ReadOnlyException;
+import net.sf.mmm.util.exception.api.NlsClassCastException;
+import net.sf.mmm.util.exception.api.ReadOnlyException;
 
 /**
  * This is the interface for an accessor used to {@link #getFieldValue(DataObject) read} or

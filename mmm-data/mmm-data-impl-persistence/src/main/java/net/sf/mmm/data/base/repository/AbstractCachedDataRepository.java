@@ -12,7 +12,7 @@ import net.sf.mmm.data.api.reflection.DataClass;
 import net.sf.mmm.data.api.reflection.DataField;
 import net.sf.mmm.data.base.AbstractDataObject;
 import net.sf.mmm.data.impl.entity.resource.AbstractDataEntityResource;
-import net.sf.mmm.util.nls.api.ObjectNotFoundException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundException;
 
 /**
  * TODO: this class ...

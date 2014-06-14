@@ -9,8 +9,8 @@ import net.sf.mmm.data.api.reflection.DataModifiersIllegalAbstractFinalException
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalException;
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalFinalExtendableException;
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalNotSystemUnextendableException;
-import net.sf.mmm.util.nls.api.DuplicateObjectException;
-import net.sf.mmm.util.nls.api.IllegalCaseException;
+import net.sf.mmm.util.exception.api.DuplicateObjectException;
+import net.sf.mmm.util.exception.api.IllegalCaseException;
 
 /**
  * This is the base implementation of the {@link DataClassModifiers} interface.

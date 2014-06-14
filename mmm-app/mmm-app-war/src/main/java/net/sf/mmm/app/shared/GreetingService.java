@@ -5,6 +5,7 @@ package net.sf.mmm.app.shared;
 import javax.annotation.security.PermitAll;
 
 import net.sf.mmm.service.api.rpc.RemoteInvocationService;
+import net.sf.mmm.util.nls.api.NlsMessage;
 
 /**
  * TODO: this class ...
@@ -16,5 +17,8 @@ public interface GreetingService extends RemoteInvocationService {
 
   @PermitAll
   String greeting(String name);
+
+  @PermitAll
+  NlsMessage testSerialization(NlsMessage message);
 
 }

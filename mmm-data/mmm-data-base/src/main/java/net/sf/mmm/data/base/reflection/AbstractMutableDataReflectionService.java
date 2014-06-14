@@ -25,7 +25,7 @@ import net.sf.mmm.data.api.reflection.DataReflectionObject;
 import net.sf.mmm.data.api.reflection.DataSystemModifyException;
 import net.sf.mmm.data.api.reflection.MutableDataReflectionService;
 import net.sf.mmm.util.event.api.ChangeType;
-import net.sf.mmm.util.nls.api.NlsNullPointerException;
+import net.sf.mmm.util.exception.api.NlsNullPointerException;
 import net.sf.mmm.util.reflect.api.ClassResolver;
 import net.sf.mmm.util.reflect.api.GenericType;
 import net.sf.mmm.util.reflect.base.MappedClassResolver;

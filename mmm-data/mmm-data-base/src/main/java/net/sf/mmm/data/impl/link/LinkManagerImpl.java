@@ -11,9 +11,9 @@ import java.util.Properties;
 import javax.inject.Named;
 
 import net.sf.mmm.data.base.link.AbstractLinkManager;
+import net.sf.mmm.util.exception.api.DuplicateObjectException;
 import net.sf.mmm.util.io.api.IoMode;
 import net.sf.mmm.util.io.api.RuntimeIoException;
-import net.sf.mmm.util.nls.api.DuplicateObjectException;
 import net.sf.mmm.util.resource.base.ClasspathResource;
 
 /**

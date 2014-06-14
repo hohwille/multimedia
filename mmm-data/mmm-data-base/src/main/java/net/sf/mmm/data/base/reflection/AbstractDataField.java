@@ -7,7 +7,7 @@ import net.sf.mmm.data.api.reflection.DataClass;
 import net.sf.mmm.data.api.reflection.DataField;
 import net.sf.mmm.data.api.reflection.DataFieldModifiers;
 import net.sf.mmm.data.api.reflection.access.DataFieldAccessor;
-import net.sf.mmm.util.nls.api.ReadOnlyException;
+import net.sf.mmm.util.exception.api.ReadOnlyException;
 import net.sf.mmm.util.reflect.api.GenericType;
 
 /**

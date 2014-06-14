@@ -17,9 +17,9 @@ import net.sf.mmm.data.base.AbstractDataObject;
 import net.sf.mmm.data.base.reflection.AbstractMutableDataReflectionService;
 import net.sf.mmm.data.impl.entity.resource.DataFolderImpl;
 import net.sf.mmm.util.component.base.AbstractLoggableComponent;
-import net.sf.mmm.util.nls.api.NlsClassCastException;
-import net.sf.mmm.util.nls.api.ObjectMismatchException;
-import net.sf.mmm.util.nls.api.ObjectNotFoundException;
+import net.sf.mmm.util.exception.api.NlsClassCastException;
+import net.sf.mmm.util.exception.api.ObjectMismatchException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundException;
 import net.sf.mmm.util.reflect.api.AccessFailedException;
 import net.sf.mmm.util.reflect.api.InstantiationFailedException;
 

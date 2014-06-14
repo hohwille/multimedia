@@ -25,10 +25,10 @@ import net.sf.mmm.util.event.api.ChangeType;
 import net.sf.mmm.util.event.api.EventListener;
 import net.sf.mmm.util.event.api.EventSource;
 import net.sf.mmm.util.event.base.AbstractSynchronizedEventSource;
-import net.sf.mmm.util.nls.api.DuplicateObjectException;
-import net.sf.mmm.util.nls.api.NlsNullPointerException;
-import net.sf.mmm.util.nls.api.ObjectMismatchException;
-import net.sf.mmm.util.nls.api.ObjectNotFoundException;
+import net.sf.mmm.util.exception.api.DuplicateObjectException;
+import net.sf.mmm.util.exception.api.NlsNullPointerException;
+import net.sf.mmm.util.exception.api.ObjectMismatchException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundException;
 import net.sf.mmm.util.reflect.api.GenericType;
 
 /**
@@ -447,7 +447,7 @@ public abstract class AbstractDataReflectionService extends AbstractLoggableComp
    * 
    * @param <CLASS> is the generic type of the <code>javaClass</code>.
    * @param id is the unique {@link DataClass#getId() ID} of the new class. May be <code>null</code>.
-   * @param title is the {@link DataClass#getTitle() title} of the new class.
+   * @param title is the {@link DataClass#getOperator() title} of the new class.
    * @param superClass is the {@link DataClass#getSuperClass() super class} of the new class.
    * @param modifiers are the {@link DataClass#getModifiers() modifiers} of the new class.
    * @param javaClass is the {@link DataClass#getJavaClass() java class} of the new class.
@@ -482,7 +482,7 @@ public abstract class AbstractDataReflectionService extends AbstractLoggableComp
    * @param <CLASS> is the generic type of {@link DataClass#getJavaClass()}.
    * @param <FIELD> is the generic type of {@link DataField#getFieldType()}.
    * @param id is the unique {@link DataField#getId() ID} of the new field. May be <code>null</code>.
-   * @param title is the {@link DataField#getTitle() title} of the new field.
+   * @param title is the {@link DataField#getOperator() title} of the new field.
    * @param declaringClass is the {@link DataClass} {@link DataField#getDeclaringClass() declaring} the new field.
    * @param fieldType is the {@link DataField#getFieldType()} of the new field.
    * @param modifiers are the {@link DataField#getModifiers() modifiers} of the new field.

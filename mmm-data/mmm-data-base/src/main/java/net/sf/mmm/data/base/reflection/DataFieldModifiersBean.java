@@ -6,8 +6,8 @@ import net.sf.mmm.data.api.reflection.DataFieldModifiers;
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalException;
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalTransientMutableException;
 import net.sf.mmm.data.api.reflection.DataModifiersIllegalTransientStaticException;
-import net.sf.mmm.util.nls.api.DuplicateObjectException;
-import net.sf.mmm.util.nls.api.IllegalCaseException;
+import net.sf.mmm.util.exception.api.DuplicateObjectException;
+import net.sf.mmm.util.exception.api.IllegalCaseException;
 
 /**
  * This is the base implementation of the {@link DataFieldModifiers} interface.

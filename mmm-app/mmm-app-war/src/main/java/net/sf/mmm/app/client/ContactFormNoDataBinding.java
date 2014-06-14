@@ -4,7 +4,7 @@ package net.sf.mmm.app.client;
 
 import net.sf.mmm.client.ui.api.UiContext;
 import net.sf.mmm.client.ui.api.widget.core.UiWidgetCollapsableSection;
-import net.sf.mmm.client.ui.api.widget.field.UiWidgetDateField;
+import net.sf.mmm.client.ui.api.widget.field.UiWidgetLocalDateField;
 import net.sf.mmm.client.ui.api.widget.field.UiWidgetTextField;
 import net.sf.mmm.client.ui.base.widget.custom.panel.UiWidgetCustomGridPanel;
 import net.sf.mmm.util.validation.api.ValidationState;
@@ -23,7 +23,7 @@ public class ContactFormNoDataBinding extends UiWidgetCustomGridPanel<ContactBea
   private UiWidgetTextField widgetLastName;
 
   /** The field for {@link ContactBean#getBirthday()}. */
-  private UiWidgetDateField widgetBirthday;
+  private UiWidgetLocalDateField widgetBirthday;
 
   /**
    * The constructor.
@@ -37,7 +37,7 @@ public class ContactFormNoDataBinding extends UiWidgetCustomGridPanel<ContactBea
     this.widgetFirstName.addValidatorMandatory();
     this.widgetLastName = getFactory().createTextField("Last name");
     this.widgetLastName.addValidatorMandatory();
-    this.widgetBirthday = getFactory().create(UiWidgetDateField.class);
+    this.widgetBirthday = getFactory().create(UiWidgetLocalDateField.class);
     this.widgetBirthday.setLabel("Birthday");
     getDelegate().setColumnCount(2);
     getDelegate().addChildren(this.widgetFirstName);

@@ -8,7 +8,7 @@ import java.util.List;
 import net.sf.mmm.data.api.entity.DataEntity;
 import net.sf.mmm.data.api.link.Link;
 import net.sf.mmm.data.api.link.MutableLinkList;
-import net.sf.mmm.util.nls.api.NlsUnsupportedOperationException;
+import net.sf.mmm.util.exception.api.NlsUnsupportedOperationException;
 
 /**
  * This is an implementation of {@link net.sf.mmm.data.api.link.LinkList} that is immutable. This is useful to
