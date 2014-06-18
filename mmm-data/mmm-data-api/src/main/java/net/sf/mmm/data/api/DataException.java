@@ -2,9 +2,11 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.data.api;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import net.sf.mmm.util.nls.api.NlsRuntimeException;
+import net.sf.mmm.util.exception.api.NlsRuntimeException;
+import net.sf.mmm.util.nls.api.NlsAccess;
 
 /**
  * This is the abstract base exception of all failures related to {@link DataObject}.
@@ -30,7 +32,7 @@ public abstract class DataException extends NlsRuntimeException {
    */
   public DataException(Throwable nested, String internationalizedMessage, Map<String, Object> arguments) {
 
-    super(nested, internationalizedMessage, arguments);
+    super(nested, NlsAccess.getFactory().create(internationalizedMessage, arguments));
   }
 
   /**
@@ -43,7 +45,7 @@ public abstract class DataException extends NlsRuntimeException {
    */
   public DataException(String internationalizedMessage, Map<String, Object> arguments) {
 
-    super(internationalizedMessage, arguments);
+    this(null, internationalizedMessage, arguments);
   }
 
   /**
@@ -69,6 +71,13 @@ public abstract class DataException extends NlsRuntimeException {
   public DataException(Throwable nested, String internationalizedMessage) {
 
     super(nested, internationalizedMessage);
+  }
+
+  protected static Map<String, Object> toMap(String key, Object value) {
+
+    Map<String, Object> result = new HashMap<String, Object>();
+    result.put(key, value);
+    return result;
   }
 
 }

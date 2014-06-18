@@ -8,7 +8,7 @@ import net.sf.mmm.data.api.DataObject;
 /**
  * This exception is thrown if a {@link DataObject} could NOT be modified because it is
  * {@link net.sf.mmm.data.api.reflection.DataModifiers#isSystem() required by the system}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -19,7 +19,7 @@ public class DataSystemModifyException extends DataReflectionException {
 
   /**
    * The constructor.
-   * 
+   *
    * @param systemObject is the {@link DataObject} that could NOT be modified because it is a
    *        {@link net.sf.mmm.data.api.reflection.DataModifiers#isSystem() system}-object.
    */
