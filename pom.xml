@@ -13,6 +13,11 @@
   <packaging>pom</packaging>
   <name>multimedia</name>
   <description>The actual multi-media-manager based on mature-modular-metaframework.</description>
+  
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
   <modules>
     <module>mmm-app</module>
     <module>mmm-data</module>
