@@ -25,7 +25,7 @@ import net.sf.mmm.util.exception.api.ReadOnlyException;
 
 /**
  * This is the abstract base implementation of the {@link DataClass} interface.
- * 
+ *
  * @param <CLASS> is the generic type of the reflected {@link #getJavaClass() class}.
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
@@ -104,7 +104,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
 
   /**
    * This method sets the {@link #getSuperClass() super-class}.
-   * 
+   *
    * @param superClass the super-class to set.
    */
   protected void setSuperClass(AbstractDataClass<? extends DataObject> superClass) {
@@ -245,7 +245,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
 
   /**
    * This method gets the class reflecting the closest type of this content-class.
-   * 
+   *
    * @return the "implementation".
    */
   @Override
@@ -256,7 +256,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
 
   /**
    * This method sets the {@link #getJavaClass() Java-class} of this content-class.
-   * 
+   *
    * @param javaClass is the class realizing the entity.
    */
   protected void setJavaClass(Class<CLASS> javaClass) {
@@ -331,7 +331,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
    * This method adds a {@link #getSubClasses() sub-class} to this class.<br>
    * It is an idempotent operation. Therefore it will have no effect if the given <code>subClass</code> is
    * already a {@link #getSubClasses() registered sub-class} of this class.
-   * 
+   *
    * @param subClass is the sub-class to add.
    * @throws DataReflectionException if the operation fails.
    */
@@ -339,7 +339,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
 
   /**
    * This method adds the given <code>field</code> to this class.
-   * 
+   *
    * @param field is the field to add.
    * @throws DataReflectionException if the field could NOT be added.
    */
@@ -365,7 +365,7 @@ public abstract class AbstractDataClass<CLASS extends DataObject> extends Abstra
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * TODO: This implementation is extremely expensive. Is there a better way to do this?
      */
     @Override
