@@ -1,35 +1,20 @@
 /* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
  * http://www.apache.org/licenses/LICENSE-2.0 */
-package net.sf.mmm.data.api.entity.audio;
+package net.sf.mmm.app.audio.common.api;
 
 import java.util.Locale;
 import java.util.Set;
 
-import net.sf.mmm.data.api.entity.DataEntity;
-import net.sf.mmm.data.api.reflection.DataClassAnnotation;
-import net.sf.mmm.data.api.reflection.DataClassIds;
+import net.sf.mmm.app.general.common.api.MmmEntity;
 import net.sf.mmm.music.datatype.api.MusicalKey;
 
 /**
- * This interface is a {@link DataEntity} that represents an audio track.
+ * This interface is an {@link MmmEntity entity} that represents an audio track.
  *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-@DataClassAnnotation(id = DataAudio.CLASS_ID, title = DataAudio.CLASS_TITLE)
-public interface DataAudio extends DataEntity {
-
-  /**
-   * The {@link net.sf.mmm.data.api.datatype.DataId#getClassId() class-ID} of the
-   * {@link net.sf.mmm.data.api.reflection.DataClass} reflecting this type.
-   */
-  long CLASS_ID = DataClassIds.ID_AUDIO;
-
-  /**
-   * The {@link net.sf.mmm.data.api.DataObject#getTitle() title} of the {@link net.sf.mmm.data.api.reflection.DataClass}
-   * reflecting this type.
-   */
-  String CLASS_TITLE = "DataAudio";
+public interface AudioTrack extends MmmEntity {
 
   /**
    * This method gets the (main) {@link MusicalKey} of this audio track.
@@ -63,7 +48,7 @@ public interface DataAudio extends DataEntity {
    * However, you can use whatever fits for your personal interest. Examples for tags are "religious", "fun", "sad",
    * etc.<br/>
    * <b>NOTE:</b><br/>
-   * Please avoid adding tags that are redundant to explicit fields of an {@link DataAudio audio track} like
+   * Please avoid adding tags that are redundant to explicit fields of an {@link AudioTrack audio track} like
    * {@link #getGenre() genre}, {@link #getPrimaryLanguage() language}, instrumental, etc.
    *
    * @return the {@link Set} of tags. Empty {@link Set} by default.
@@ -71,30 +56,23 @@ public interface DataAudio extends DataEntity {
   Set<String> getTags();
 
   /**
-   * This method gets the {@link DataArtist artist} of this audio track.
-   *
-   * @return the {@link DataArtist} or <code>null</code> if undefined (unknown).
+   * @return the {@link AudioArtist}.
    */
-  DataArtist getArtist();
+  AudioArtist getArtist();
 
   /**
-   * This method sets the {@link #getArtist() artist}.
-   *
-   * @param artist is the {@link DataArtist} to set.
+   * @param artist is the new value of {@link #getArtist()}.
    */
-  void setArtist(DataArtist artist);
+  void setArtist(AudioArtist artist);
 
   /**
-   * This method gets the {@link DataAudioGenre genre} of this audio track.
-   *
-   * @return the {@link DataAudioGenre} or <code>null</code> if undefined (unknown).
+   * @return the {@link AudioGenre}.
    */
-  DataAudioGenre getGenre();
+  AudioGenre getGenre();
 
   /**
-   * This method sets the {@link #getGenre() genre}.
-   *
-   * @param genre is the {@link DataAudioGenre} to set.
+   * @param genre is the new value of {@link #getGenre()}.
    */
-  void setGenre(DataAudioGenre genre);
+  void setGenre(AudioGenre genre);
+
 }

@@ -1,0 +1,7 @@
+.*
+*.bak
+*.ucls
+gwt-unitCache
+
+target
+eclipse-target

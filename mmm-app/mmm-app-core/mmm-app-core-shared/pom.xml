@@ -24,5 +24,15 @@
       <artifactId>mmm-data-api</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
-  </dependencies>  
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-util-datatype</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-music-core</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 </project>

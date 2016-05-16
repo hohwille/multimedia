@@ -1,12 +1,11 @@
-<?xml version='1.0' encoding='Cp1252'?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm</artifactId>
-    <version>1.0.0</version>
-    <relativePath>../mmm/pom.xml</relativePath>
+    <version>2.0.0</version>
+    <relativePath>../mmm/mmm-parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-multimedia</artifactId>
   <version>1.0.0</version>
@@ -16,6 +15,8 @@
   
   <properties>
     <java.version>1.8</java.version>
+    <mmm.client.version>1.0.0-SNAPSHOT</mmm.client.version>
+    <mmm.persistence.version>1.0.1-SNAPSHOT</mmm.persistence.version>
   </properties>
 
   <modules>
@@ -25,13 +26,33 @@
     <!-- UIT (UI-Toolkit) is just dead code. It is the predecessor of mmm-client-ui-widget but still 
          contains code that is not ported (Swing and SWT) but might be of interest some day for mmm-client-ui-widget-->
     <!--<module>mmm-uit</module>-->
+    <module>mmm-dragome</module>
   </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- BOM of OASP4J -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-client-bom</artifactId>
+        <version>${mmm.client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-persistence-bom</artifactId>
+        <version>${mmm.persistence.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-test</artifactId>
-      <version>0-SNAPSHOT</version>
+      <artifactId>mmm-util-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

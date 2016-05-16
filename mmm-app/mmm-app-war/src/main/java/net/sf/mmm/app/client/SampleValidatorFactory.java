@@ -2,6 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.app.client;
 
+import javax.validation.ParameterNameProvider;
 import javax.validation.Validator;
 import javax.validation.groups.Default;
 
@@ -18,9 +19,23 @@ import com.google.gwt.validation.client.impl.AbstractGwtValidator;
  */
 public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
 
+  @Override
+  public ParameterNameProvider getParameterNameProvider() {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void close() {
+
+    // TODO Auto-generated method stub
+
+  }
+
   /**
-   * Validator marker for the Validation Sample project. Only the classes listed in the {@link GwtValidation}
-   * annotation can be validated.
+   * Validator marker for the Validation Sample project. Only the classes listed in the {@link GwtValidation} annotation
+   * can be validated.
    */
   @GwtValidation(value = ContactBean.class, groups = { Default.class })
   public interface GwtValidator extends Validator {
